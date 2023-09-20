@@ -1,11 +1,12 @@
-import './globals.css';
+import Navbar from '@/app/components/Navbar';
+import '../../globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'TitBits',
+  title: 'TidBits',
   description: 'Daily dose of relevant info!',
 };
 
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar height={80} />
+        {children}
+      </body>
     </html>
   );
 }

@@ -2,26 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 5px;
 }
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(74, 91, 127);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* base styles */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #fff;
+  @apply text-gray-500 p-0;
+}
+
+h1,
+h2 {
+  @apply font-bold  text-lg;
+}
+main {
+  @apply max-w-5xl   mx-auto;
+}
+main > h2 {
+  @apply text-base;
+}
+p > a {
+  @apply underline;
+}
+
+/* nav styles */
+nav {
+  @apply pb-4
+    border-b-2 border-gray-200
+    flex items-center gap-5 
+    my-10 mx-auto 
+    max-w-5xl;
+}
+nav a,
+nav span {
+  @apply text-gray-500;
+}
+nav a:hover {
+  @apply text-black;
+}
+
+/* card styles */
+.card {
+  @apply bg-white 
+    shadow-sm 
+    rounded-md 
+    py-3 px-4 my-4 
+    relative 
+    overflow-hidden;
+}
+.card h3 {
+  @apply font-bold text-gray-700 text-sm 
+    mb-0;
+}
+.card p {
+  @apply my-4 text-sm leading-6;
+}
+
+.log {
+  @apply border-4 border-red-100;
 }
